@@ -1,0 +1,11 @@
+C:\Users\User\source\repos\student\Model\bin\Debug\net10.0\student.Model.deps.json
+C:\Users\User\source\repos\student\Model\bin\Debug\net10.0\student.Model.dll
+C:\Users\User\source\repos\student\Model\bin\Debug\net10.0\student.Model.pdb
+C:\Users\User\source\repos\student\Model\obj\Debug\net10.0\student.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\student\Model\obj\Debug\net10.0\student.Model.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\student\Model\obj\Debug\net10.0\student.Model.AssemblyInfo.cs
+C:\Users\User\source\repos\student\Model\obj\Debug\net10.0\student.Model.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\student\Model\obj\Debug\net10.0\student.Model.dll
+C:\Users\User\source\repos\student\Model\obj\Debug\net10.0\refint\student.Model.dll
+C:\Users\User\source\repos\student\Model\obj\Debug\net10.0\student.Model.pdb
+C:\Users\User\source\repos\student\Model\obj\Debug\net10.0\ref\student.Model.dll

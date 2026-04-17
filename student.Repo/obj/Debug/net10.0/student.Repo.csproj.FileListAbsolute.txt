@@ -1,0 +1,17 @@
+C:\Users\User\source\repos\student\student.Repo\bin\Debug\net10.0\student.Repo.deps.json
+C:\Users\User\source\repos\student\student.Repo\bin\Debug\net10.0\student.Repo.dll
+C:\Users\User\source\repos\student\student.Repo\bin\Debug\net10.0\student.Repo.pdb
+C:\Users\User\source\repos\student\student.Repo\bin\Debug\net10.0\student.Data.dll
+C:\Users\User\source\repos\student\student.Repo\bin\Debug\net10.0\student.Model.dll
+C:\Users\User\source\repos\student\student.Repo\bin\Debug\net10.0\student.Model.pdb
+C:\Users\User\source\repos\student\student.Repo\bin\Debug\net10.0\student.Data.pdb
+C:\Users\User\source\repos\student\student.Repo\obj\Debug\net10.0\student.Repo.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\student\student.Repo\obj\Debug\net10.0\student.Repo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\student\student.Repo\obj\Debug\net10.0\student.Repo.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\student\student.Repo\obj\Debug\net10.0\student.Repo.AssemblyInfo.cs
+C:\Users\User\source\repos\student\student.Repo\obj\Debug\net10.0\student.Repo.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\student\student.Repo\obj\Debug\net10.0\student..EDFCC441.Up2Date
+C:\Users\User\source\repos\student\student.Repo\obj\Debug\net10.0\student.Repo.dll
+C:\Users\User\source\repos\student\student.Repo\obj\Debug\net10.0\refint\student.Repo.dll
+C:\Users\User\source\repos\student\student.Repo\obj\Debug\net10.0\student.Repo.pdb
+C:\Users\User\source\repos\student\student.Repo\obj\Debug\net10.0\ref\student.Repo.dll
