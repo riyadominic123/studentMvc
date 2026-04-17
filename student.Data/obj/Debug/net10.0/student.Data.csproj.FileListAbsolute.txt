@@ -1,0 +1,17 @@
+C:\Users\User\source\repos\student\student.Data\bin\Debug\net10.0\student.Data.deps.json
+C:\Users\User\source\repos\student\student.Data\bin\Debug\net10.0\student.Data.runtimeconfig.json
+C:\Users\User\source\repos\student\student.Data\bin\Debug\net10.0\student.Data.dll
+C:\Users\User\source\repos\student\student.Data\bin\Debug\net10.0\student.Data.pdb
+C:\Users\User\source\repos\student\student.Data\bin\Debug\net10.0\student.Model.dll
+C:\Users\User\source\repos\student\student.Data\bin\Debug\net10.0\student.Model.pdb
+C:\Users\User\source\repos\student\student.Data\obj\Debug\net10.0\student.Data.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\student\student.Data\obj\Debug\net10.0\student.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\student\student.Data\obj\Debug\net10.0\student.Data.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\student\student.Data\obj\Debug\net10.0\student.Data.AssemblyInfo.cs
+C:\Users\User\source\repos\student\student.Data\obj\Debug\net10.0\student.Data.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\student\student.Data\obj\Debug\net10.0\student..F30DFDD7.Up2Date
+C:\Users\User\source\repos\student\student.Data\obj\Debug\net10.0\student.Data.dll
+C:\Users\User\source\repos\student\student.Data\obj\Debug\net10.0\refint\student.Data.dll
+C:\Users\User\source\repos\student\student.Data\obj\Debug\net10.0\student.Data.pdb
+C:\Users\User\source\repos\student\student.Data\obj\Debug\net10.0\student.Data.genruntimeconfig.cache
+C:\Users\User\source\repos\student\student.Data\obj\Debug\net10.0\ref\student.Data.dll
