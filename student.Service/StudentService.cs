@@ -22,5 +22,18 @@ namespace student.Service
         {
             _repo.Add(student);
         }
+        public Student GetStudentById(int id)
+        {
+            return _repo.GetById(id);
+        }
+        public void DeleteStudent(int id)
+        {
+            _repo.Delete(id);
+        }
+        public void UpdateStudent(Student student)
+        {
+            _repo.Update(student);
+        }
+
     }
 }

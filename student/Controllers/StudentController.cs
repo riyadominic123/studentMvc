@@ -27,5 +27,21 @@ namespace student.Controllers
             _service.AddStudent(student);
             return RedirectToAction("index");
         }
+        public IActionResult Edit(int id)
+        {
+            var student = _service.GetStudentById(id);
+            return View(student);
+        }
+        [HttpPost]
+        public IActionResult Edit(Student student)
+        {
+            _service.UpdateStudent(student);
+            return RedirectToAction("Index");
+        }
+        public IActionResult Delete(int id)
+        {
+            _service.DeleteStudent(id);
+            return RedirectToAction("Index");
+        }
     }
 }

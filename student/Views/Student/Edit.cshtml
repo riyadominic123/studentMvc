@@ -1,0 +1,12 @@
+﻿@model student.Model.Student
+<h2>Edit Student</h2>
+<form method ="post">
+    <input  type="hidden" asp-for="Id"/>
+    <label>Name:</label>
+    <input asp-for="Name" /><br />
+
+    <label>Age:</label>
+    <input asp-for="Age" /><br />
+
+    <button type="submit">Update</button>
+</form>

@@ -8,5 +8,8 @@ namespace student.Service
     {
         List<Student> GetStudents();
         void AddStudent(Student student);
+        Student GetStudentById(int id);
+        void UpdateStudent(Student student);
+        void DeleteStudent(int id);
     }
 }
