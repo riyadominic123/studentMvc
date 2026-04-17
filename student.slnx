@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="Model/student.Model.csproj" />
+  <Project Path="student.Data/student.Data.csproj" />
+  <Project Path="student.Repo/student.Repo.csproj" Id="dbbe4c4d-4f0e-456e-a79d-d49d19175d6e" />
+  <Project Path="student.Service/student.Service.csproj" Id="58ca83e1-fef5-4a04-a93c-2c2d69bfdbf9" />
+  <Project Path="student/student.csproj" />
+</Solution>
