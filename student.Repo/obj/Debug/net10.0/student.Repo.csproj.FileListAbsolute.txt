@@ -15,3 +15,4 @@ C:\Users\User\source\repos\student\student.Repo\obj\Debug\net10.0\student.Repo.d
 C:\Users\User\source\repos\student\student.Repo\obj\Debug\net10.0\refint\student.Repo.dll
 C:\Users\User\source\repos\student\student.Repo\obj\Debug\net10.0\student.Repo.pdb
 C:\Users\User\source\repos\student\student.Repo\obj\Debug\net10.0\ref\student.Repo.dll
+C:\Users\User\source\repos\student\student.Repo\obj\Debug\net10.0\student.Repo.sourcelink.json

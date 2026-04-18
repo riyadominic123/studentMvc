@@ -24,6 +24,7 @@ namespace student.Repo
             _appDbContext.SaveChanges();
         }
         public Student GetById(int id)
+
         {
             return _appDbContext.Students.Find(id);
         }

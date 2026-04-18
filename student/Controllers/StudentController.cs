@@ -24,8 +24,16 @@ namespace student.Controllers
         [HttpPost]
         public IActionResult Create(Student student)
         {
-            _service.AddStudent(student);
-            return RedirectToAction("index");
+            if (student.Name == student.Age.ToString())
+            {
+                ModelState.AddModelError("Name", "Name cannot be same as Age");
+            }
+            if (ModelState.IsValid)
+            {
+                _service.AddStudent(student);
+                return RedirectToAction("index");
+            }
+            return View(student);
         }
         public IActionResult Edit(int id)
         {

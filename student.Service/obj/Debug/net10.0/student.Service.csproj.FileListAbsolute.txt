@@ -17,3 +17,4 @@ C:\Users\User\source\repos\student\student.Service\obj\Debug\net10.0\student.Ser
 C:\Users\User\source\repos\student\student.Service\obj\Debug\net10.0\refint\student.Service.dll
 C:\Users\User\source\repos\student\student.Service\obj\Debug\net10.0\student.Service.pdb
 C:\Users\User\source\repos\student\student.Service\obj\Debug\net10.0\ref\student.Service.dll
+C:\Users\User\source\repos\student\student.Service\obj\Debug\net10.0\student.Service.sourcelink.json

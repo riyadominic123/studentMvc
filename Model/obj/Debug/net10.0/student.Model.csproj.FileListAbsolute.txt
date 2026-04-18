@@ -9,3 +9,4 @@ C:\Users\User\source\repos\student\Model\obj\Debug\net10.0\student.Model.dll
 C:\Users\User\source\repos\student\Model\obj\Debug\net10.0\refint\student.Model.dll
 C:\Users\User\source\repos\student\Model\obj\Debug\net10.0\student.Model.pdb
 C:\Users\User\source\repos\student\Model\obj\Debug\net10.0\ref\student.Model.dll
+C:\Users\User\source\repos\student\Model\obj\Debug\net10.0\student.Model.sourcelink.json
