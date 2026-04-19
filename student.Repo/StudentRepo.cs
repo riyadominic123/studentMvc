@@ -4,6 +4,7 @@ using System.Text;
 using System.Linq;
 using student.Data;
 using student.Model;
+using Microsoft.EntityFrameworkCore;
 
 namespace student.Repo
 {
@@ -42,6 +43,16 @@ namespace student.Repo
                 _appDbContext.SaveChanges();
 
             }
+        }
+        public List<Student> GetAllWithClass()
+        {
+            return _appDbContext.Students
+                .Include(s => s.Class)
+                .ToList();
+        }
+        public List<Class> GetClasses()
+        {
+            return _appDbContext.Classes.ToList();
         }
 
     }

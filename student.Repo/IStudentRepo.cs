@@ -9,6 +9,8 @@ namespace student.Repo
     {
         List<Student> GetAll();
         Student GetById(int id);
+        List<Student> GetAllWithClass();
+        List<Class> GetClasses();
         void Add(Student student);
         void Update(Student student);
         void Delete(int id);

@@ -14,10 +14,6 @@ namespace student.Service
         {
             _repo = repo;
         }
-        public List<Student> GetStudents()
-        {
-            return _repo.GetAll();
-        }
         public void AddStudent(Student student)
         {
             _repo.Add(student);
@@ -33,6 +29,14 @@ namespace student.Service
         public void UpdateStudent(Student student)
         {
             _repo.Update(student);
+        }
+        public List<Student> GetStudents()
+        {
+            return _repo.GetAllWithClass();
+        }
+        public List<Class> GetClasses()
+        {
+            return _repo.GetClasses();
         }
 
     }
