@@ -20,6 +20,27 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
+                        <ul class="navbar-nav ms-auto">
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <li class="nav-item">
+                                    <span class="nav-link">Hello @User.Identity.Name</span>
+                                </li>
+                                <li class="nav-item">
+                                    <form asp-area="Identity" asp-page="/Account/Logout" method="post">
+                                        <button type="submit" class="nav-link btn btn-link" style="border:none;">
+                                            Logout
+                                        </button>
+                                    </form>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                                </li>
+                            }
+                        </ul>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>

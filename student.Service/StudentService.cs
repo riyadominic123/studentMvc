@@ -38,6 +38,15 @@ namespace student.Service
         {
             return _repo.GetClasses();
         }
+        public int? GetClassIdByUserId(string userId)
+        {
+            var userClass = _repo.GetUserClass(userId);
+            return userClass?.ClassId;
+        }
+        public void AddUserClass(UserClass userClass)
+        {
+            _repo.AddUserClass(userClass);
+        }
 
     }
 }

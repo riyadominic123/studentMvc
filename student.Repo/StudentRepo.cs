@@ -54,6 +54,19 @@ namespace student.Repo
         {
             return _appDbContext.Classes.ToList();
         }
+        public UserClass GetUserClass(string userId)
+        {
+            return _appDbContext.UserClasses
+                .FirstOrDefault(u => u.UserId == userId);
+        }
+        public void AddUserClass(UserClass userClass)
+        {
+            if (!_appDbContext.UserClasses.Any(u => u.UserId == userClass.UserId))
+            {
+                _appDbContext.UserClasses.Add(userClass);
+                _appDbContext.SaveChanges();
+            }
+        }
 
     }
 }

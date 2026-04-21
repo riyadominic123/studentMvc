@@ -1,6 +1,12 @@
 ﻿@model List<student.Model.Student>
 <h2>Student List</h2>
-<a href="/Student/Create">Add Student</a>
+@if (User.IsInRole("Admin"))
+{
+    <a href="/Student/Create">Add Student</a>
+}
+<p>User: @User.Identity.Name</p>
+<p>Is Admin: @User.IsInRole("Admin")</p>
+
 <table border="1">
     <tr>
         <th>Id</th>

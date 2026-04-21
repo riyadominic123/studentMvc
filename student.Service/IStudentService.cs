@@ -12,5 +12,7 @@ namespace student.Service
         Student GetStudentById(int id);
         void UpdateStudent(Student student);
         void DeleteStudent(int id);
+        int? GetClassIdByUserId(string userId);
+        void AddUserClass(UserClass userClass);
     }
 }

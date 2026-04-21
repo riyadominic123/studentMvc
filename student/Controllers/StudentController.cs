@@ -1,59 +1,116 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using student.Model;
 using student.Service;
+using System.Security.Claims;
 
 namespace student.Controllers
 {
+    [Authorize]
     public class StudentController : Controller
     {
         private readonly IStudentService _service;
-        public StudentController(IStudentService service)
+        private readonly UserManager<IdentityUser> _userManager;
+
+        public StudentController(IStudentService service, UserManager<IdentityUser> userManager)
         {
             _service = service;
+            _userManager = userManager;
         }
+
         public IActionResult Index()
         {
-            var student = _service.GetStudents();
-            return View(student);
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            
+            if (User.IsInRole("Admin"))
+            {
+                return View(_service.GetStudents());
+            }
+
+           
+            var classId = _service.GetClassIdByUserId(userId);
+
+            if (classId == null)
+            {
+                return View(new List<Student>());
+            }
+
+            var students = _service.GetStudents()
+                .Where(s => s.ClassId == classId)
+                .ToList();
+
+            return View(students);
         }
+
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
-          
             ViewBag.ClassList = _service.GetClasses()
-               .Select(c => new SelectListItem
-               {
-                     Value = c.Id.ToString(),
-                     Text = c.Name
-               }).ToList();
-            return View();
+                .Select(c => new SelectListItem
+                {
+                    Value = c.Id.ToString(),
+                    Text = c.Name
+                }).ToList();
 
+            return View();
         }
+
+        [Authorize(Roles = "Admin")]
         [HttpPost]
-        public IActionResult Create(Student student)
+        public async Task<IActionResult> Create(Student student)
         {
             if (student.Name == student.Age.ToString())
             {
                 ModelState.AddModelError("Name", "Name cannot be same as Age");
             }
+
             if (ModelState.IsValid)
             {
+                
                 _service.AddStudent(student);
-                return RedirectToAction("index");
-            }
-            if (!ModelState.IsValid)
-            {
-                foreach (var error in ModelState)
+
+                
+                var user = new IdentityUser
                 {
-                    Console.WriteLine(error.Key);
+                    UserName = student.Name + "@mail.com",
+                    Email = student.Name + "@mail.com"
+                };
+
+                var result = await _userManager.CreateAsync(user, "Test@123");
+
+                if (result.Succeeded)
+                {
+
+                    await _userManager.AddToRoleAsync(user, "Student");
+
+
+                    _service.AddUserClass(new UserClass
+                    {
+                        UserId = user.Id,
+                        ClassId = student.ClassId
+                    });
                 }
+                else
+                {
+                    foreach (var error in result.Errors)
+                    {
+                        ModelState.AddModelError("", error.Description);
+                    }
+                }
+
+                return RedirectToAction("Index");
             }
+
             ViewBag.ClassList = _service.GetClasses()
-        .Select(c => new SelectListItem
-        {
-            Value = c.Id.ToString(),
-            Text = c.Name
-        }).ToList();
+                .Select(c => new SelectListItem
+                {
+                    Value = c.Id.ToString(),
+                    Text = c.Name
+                }).ToList();
+
             return View(student);
         }
         public IActionResult Edit(int id)
