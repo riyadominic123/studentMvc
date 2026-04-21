@@ -1,8 +1,9 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using student.Data;
-using student.Service;
 using student.Repo;
-using Microsoft.AspNetCore.Identity;
+using student.Service;
+using student.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -21,6 +22,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options =>
 builder.Services.AddScoped<IStudentService, StudentService>();
 builder.Services.AddScoped<IStudentRepo, StudentRepo>();
 builder.Services.AddRazorPages();
+builder.Services.AddHttpClient<StudentApiService>();
 var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {

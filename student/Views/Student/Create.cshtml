@@ -1,25 +1,23 @@
 ﻿@model student.Model.Student
+
 <h2>Add Student</h2>
-<form method="post">
 
-    <div>
-        <label>Name</label>
-        <input asp-for="Name" />
-    </div>
+<form asp-action="Create" method="post">
+    
+    <label>Name</label>
+    <input asp-for="Name" />
+    <br />
 
-    <div>
-        <label>Age</label>
-        <input asp-for="Age" />
-    </div>
+    <label>Age</label>
+    <input asp-for="Age" />
+    <br />
 
-    <div>
-        <label>Class</label>
-        <select asp-for="ClassId" asp-items="ViewBag.ClassList"></select>
-    </div>
+    <label>Class</label>
+    <select asp-for="ClassId" asp-items="ViewBag.ClassList">
+        <option value="">-- Select Class --</option>
+    </select>
+    <br />
 
     <button type="submit">Save</button>
 
 </form>
-@section Scripts{
-    <partial name="_ValidationScriptsPartial"/>
-}

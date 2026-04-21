@@ -1,30 +1,27 @@
 ﻿@model List<student.Model.Student>
+
 <h2>Student List</h2>
+
 @if (User.IsInRole("Admin"))
 {
     <a href="/Student/Create">Add Student</a>
 }
-<p>User: @User.Identity.Name</p>
-<p>Is Admin: @User.IsInRole("Admin")</p>
 
 <table border="1">
     <tr>
         <th>Id</th>
         <th>Name</th>
         <th>Age</th>
+        <th>Class</th>
     </tr>
-@foreach (var s in Model)
+
+    @foreach (var s in Model)
     {
         <tr>
-            <th>@s.Id</th>
+            <td>@s.Id</td>
             <td>@s.Name</td>
             <td>@s.Age</td>
-            <td>
-                <a href="/Student/Edit/@s.Id">Edit</a> |
-                <a href="/Student/Delete/@s.Id">Delete</a>
-            </td>
-            <td>@s.Class.Name</td>
+            <td>@s.Class</td>
         </tr>
     }
-    
 </table>
