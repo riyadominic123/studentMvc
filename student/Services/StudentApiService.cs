@@ -19,10 +19,22 @@ namespace student.Services
         {
             return await _httpClient.GetFromJsonAsync<List<Class>>("api/class");
         }
+        public async Task<Student> GetStudentByIdAsync(int id)
+        {
+            return await _httpClient.GetFromJsonAsync<Student>($"api/student/{id}");
+        }
+        public async Task UpdateStudentAsync(int id, Student student)
+        {
+            await _httpClient.PutAsJsonAsync($"api/student/{id}", student);
+        }
 
         public async Task AddStudentAsync(Student student)
         {
             await _httpClient.PostAsJsonAsync("api/student", student);
+        }
+        public async Task DeleteStudentAsync(int id)
+        {
+            await _httpClient.DeleteAsync($"api/student/{id}");
         }
     }
 }
