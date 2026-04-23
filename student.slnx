@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="../WebApplication3/WebApplication3.csproj" />
   <Project Path="Model/student.Model.csproj" />
   <Project Path="student.Data/student.Data.csproj" />
   <Project Path="student.Repo/student.Repo.csproj" Id="dbbe4c4d-4f0e-456e-a79d-d49d19175d6e" />

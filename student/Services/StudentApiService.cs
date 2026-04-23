@@ -9,6 +9,7 @@ namespace student.Services
         {
             _httpClient = httpClient;
             _httpClient.BaseAddress = new Uri("https://localhost:7175/");
+            _httpClient.DefaultRequestHeaders.Add("X-API-KEY", "MY_SECRET_KEY_123");
         }
 
         public async Task<List<Student>> GetStudentsAsync()
