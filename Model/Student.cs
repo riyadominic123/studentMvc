@@ -16,6 +16,7 @@ namespace student.Model
         public int ClassId {  get; set; }
         [NotMapped]
         public Class? Class { get; set; }
+        public string? ClassName { get; set; }
         public string? ImagePath { get; set; }
     }
 }

@@ -1,38 +1,63 @@
 ﻿@model List<student.Model.Student>
 
 <h2>Student List</h2>
-
+@if (!Model.Any())
+{
+    <div class="alert alert-info">
+        No students found. Click "Add Student" to create one.
+    </div>
+}
 @if (User.IsInRole("Admin"))
 {
-    <a asp-area="Admin" asp-controller="Student" asp-action="Create" class="btn btn-primary">
+    <a asp-area="Admin" asp-controller="Student" asp-action="Create" class="btn btn-success mb-3">
         Add Student
     </a>
 }
 
 
-<table border="1">
+<table class="table table-bordered table-hover shadow">
+    <thead class="table-dark">
     <tr>
         <th>Id</th>
         <th>Name</th>
         <th>Age</th>
         <th>Class</th>
         <th>Image</th>
+            <th style="width:150px;">Actions</th>
     </tr>
-
+    </thead>
+    <tbody>
     @foreach (var s in Model)
     {
-        <tr>
+            <tr class="align-middle">
+                
+
             <td>@s.Id</td>
             <td>@s.Name</td>
             <td>@s.Age</td>
-            <td>@s.Class?.Name</td>
+                <td>@s.ClassName</td>
+                <td>
+                    <img src="@Url.Content(s.ImagePath ?? "/images/default.png")"
+                         width="60"
+                         height="60"
+                         style="object-fit:cover; border-radius:8px;" />
+                </td>
             <td>
-                <a asp-area="Admin" asp-controller="Student" asp-action="Edit" asp-route-id="@s.Id">Edit</a> |
-                <a asp-area="Admin" asp-controller="Student" asp-action="Delete" asp-route-id="@s.Id">Delete</a>
+                    <a asp-action="Edit"
+                           asp-route-id="@s.Id"
+                           class="btn btn-sm btn-warning">
+                        Edit
+                    </a>
+
+                    <a asp-action="Delete"
+                           asp-route-id="@s.Id"
+                           class="btn btn-sm btn-danger"
+                           onclick="return confirm('Are you sure?')">
+                        Delete
+                    </a>
             </td>
-            <td>
-                <img src="@Url.Content(s.ImagePath)" width="80" height="80" />
-            </td>
+            
         </tr>
     }
+    </tbody>
 </table>

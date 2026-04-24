@@ -21,6 +21,14 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <ul class="navbar-nav ms-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark"
+                                           asp-area="Admin"
+                                           asp-controller="Student"
+                                           asp-action="Index">
+                                        📚 Students
+                                    </a>
+                                </li>
                             @if (User.Identity.IsAuthenticated)
                             {
                                 <li class="nav-item">

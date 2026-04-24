@@ -1,8 +1,15 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿<h2>Welcome</h2>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="mt-4">
+    <div class="card p-4 shadow" style="width:300px;">
+        <h4>Student Management</h4>
+        <p>View and manage students</p>
+
+        <a asp-area="Admin"
+               asp-controller="Student"
+               asp-action="Index"
+               class="btn btn-primary">
+            Open Students
+        </a>
+    </div>
 </div>

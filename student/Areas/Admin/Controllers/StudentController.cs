@@ -11,11 +11,13 @@ namespace student.Areas.Admin.Controllers
     public class StudentController : Controller
         {
             private readonly StudentApiService _apiService;
+        private readonly IWebHostEnvironment _env;
 
-            public StudentController(StudentApiService apiService)
+        public StudentController(StudentApiService apiService, IWebHostEnvironment env)
             {
                 _apiService = apiService;
-            }
+            _env = env;
+        }
 
 
             public async Task<IActionResult> Index()
@@ -74,10 +76,10 @@ namespace student.Areas.Admin.Controllers
                 {
                     var fileName = Guid.NewGuid().ToString() + Path.GetExtension(imageFile.FileName);
 
-                    var folderPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/");
+                var folderPath = Path.Combine(_env.WebRootPath, "images");
 
 
-                    if (!Directory.Exists(folderPath))
+                if (!Directory.Exists(folderPath))
                     {
                         Directory.CreateDirectory(folderPath);
                     }
@@ -89,7 +91,7 @@ namespace student.Areas.Admin.Controllers
                         await imageFile.CopyToAsync(stream);
                     }
 
-                    student.ImagePath = "images/" + fileName;
+                    student.ImagePath = "/images/" + fileName;
                 }
                      Console.WriteLine("ClassId: " + student.ClassId);
 
