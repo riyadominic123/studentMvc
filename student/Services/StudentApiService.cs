@@ -31,7 +31,19 @@ namespace student.Services
 
         public async Task AddStudentAsync(Student student)
         {
-            await _httpClient.PostAsJsonAsync("api/student", student);
+            var response = await _httpClient.PostAsJsonAsync("api/student", student);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                var error = await response.Content.ReadAsStringAsync();
+                Console.WriteLine("❌ API ERROR: " + error);
+                Console.WriteLine("❌ FULL ERROR: " + error);
+                throw new Exception(error);
+            }
+            else
+            {
+                Console.WriteLine("✅ Student Added Successfully");
+            }
         }
         public async Task DeleteStudentAsync(int id)
         {

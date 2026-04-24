@@ -1,0 +1,38 @@
+﻿@model List<student.Model.Student>
+
+<h2>Student List</h2>
+
+@if (User.IsInRole("Admin"))
+{
+    <a asp-area="Admin" asp-controller="Student" asp-action="Create" class="btn btn-primary">
+        Add Student
+    </a>
+}
+
+
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Class</th>
+        <th>Image</th>
+    </tr>
+
+    @foreach (var s in Model)
+    {
+        <tr>
+            <td>@s.Id</td>
+            <td>@s.Name</td>
+            <td>@s.Age</td>
+            <td>@s.Class?.Name</td>
+            <td>
+                <a asp-area="Admin" asp-controller="Student" asp-action="Edit" asp-route-id="@s.Id">Edit</a> |
+                <a asp-area="Admin" asp-controller="Student" asp-action="Delete" asp-route-id="@s.Id">Delete</a>
+            </td>
+            <td>
+                <img src="@Url.Content(s.ImagePath)" width="80" height="80" />
+            </td>
+        </tr>
+    }
+</table>
